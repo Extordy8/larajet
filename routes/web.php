@@ -17,8 +17,8 @@ use App\Http\Controllers\InicioController;
 |
 */
 
-Route::get('/', 'App\Http\Controllers\InicioController@index');
-
+//Route::get('/', 'App\Http\Controllers\InicioController@index');
+Route::resource('/','App\Http\Controllers\PersonaController');
 
 Route::middleware([
     'auth:sanctum',
