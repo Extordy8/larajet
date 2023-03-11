@@ -3,6 +3,8 @@
 use Illuminate\Contracts\View\View;
 use Illuminate\Queue\RedisQueue;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Controller\index;
+use App\Http\Controllers\InicioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,19 +16,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-/*
-Route::get('/', function () {
-    return view('welcome');
-});*/
-    if (view()->exists('view.vista2')){
-    Route::get('/',function(){
-        return view('vista1',['nombre'=>'juan']);
-    });
-    }else{
-    Route::get('/',function(){
-        return 'la vista solicitada no esxite';
-    });
-    }
+
+Route::get('/', 'App\Http\Controllers\InicioController@index');
+
 
 Route::middleware([
     'auth:sanctum',
